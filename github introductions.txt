@@ -1,0 +1,129 @@
+Windows Key/type Git Bash/open Git Bash
+
+Check git version:
+$ git –version
+Check user name and email:
+$ git config user.name
+$ git config user.email
+
+$ clear
+
+GitHub.com account settings/SSH and GPG Keys
+Right click on  generating SSH keys  and new tab opens.
+New Tab: Connecting to GitHub with SSH
+You can connect to GitHub using the Secure Shell Protocol (SSH), which provides a secure channel over an unsecured network.
+About SSH
+Checking for existing SSH keys
+Generating a new SSH key and adding it to the ssh-agent CLICK ON THIS THIRD LINK
+GO TO Generating a new SSH key AND COPY BELOW UNDER NUMBER 2
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+
+
+
+jango@Boratemel MINGW64 ~
+$ ssh-keygen -t ed25519 -C "jangonyc@outlook.com"   REMEMBER TO PUT YOUR EMAIL HERE BEFORE YOU HIT ENTER THEN HIT ENTER\ENTER\ENTER
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/jango/.ssh/id_ed25519):
+/c/Users/jango/.ssh/id_ed25519 already exists.
+Overwrite (y/n)?
+
+
+SCROLL DOWN TO Adding your SSH key to the ssh-agent
+UNDER NUMBER 1 COPY THIS:   $ eval "$(ssh-agent -s)"
+jango@Boratemel MINGW64 ~
+$ eval "$(ssh-agent -s)"
+Agent pid 460
+
+SCROLL DOWN AND UNDER NUMBER 2 COPY THIS: $ ssh-add ~/.ssh/id_ed25519
+jango@Boratemel MINGW64 ~
+$ ssh-add ~/.ssh/id_ed25519
+Identity added: /c/Users/jango/.ssh/id_ed25519 (jangonyc@outlook.com)
+
+
+AT NUMBER 3 CLICK ON THIS LINK: Add the SSH key to your account on GitHub. For more information, see "Adding a new SSH key to your GitHub account."
+NEW TAB OPENS: Adding a new SSH key to your GitHub account
+SCROLL DOWN TO: Adding a new SSH key to your account
+UNDER NUMBER 1 COPY THIS: $ clip < ~/.ssh/id_ed25519.pub
+
+jango@Boratemel MINGW64 ~
+$ clip < ~/.ssh/id_ed25519.pub
+
+GO BACK TO: https://github.com/settings/keys SSH and GPG keys\SSH keys. CLICK ON GREEN BUTTON: New SSH Key. NEW TAB OPENS. ON THE BIG BOX DO THIS: Ctrl + V AND NEW KEY APPEARS. TYPE MySSHKeY IN TITLE BOX ABOVE.
+
+jango@Boratemel MINGW64 ~
+$
+SSH KEY IS NOW CREATED/ADDED AND YOU’LL GET AN EMAIL. DONE.
+$ clear
+
+CLOSE GIT BASH
+
+Open a REPOSITORY IN GitHub.com account.
+Create a folder at C:\users\Jango\ name it GitProject_XYZ. 
+Open it, it is empty. 
+Add few notepad sample text files then inside this folder right click\GitBash Here to open Git Bash.
+Do the following steps:
+
+jango@Boratemel MINGW64 ~/GitProjectDec4-2022
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+jango@Boratemel MINGW64 ~/GitProjectDec4-2022
+$ git init   SEE THAT .git folder created in GitProject_XYZ folder.(Do view/show/hidden items otherwise)
+Initialized empty Git repository in C:/Users/jango/GitProjectDec4-2022/.git/
+
+jango@Boratemel MINGW64 ~/GitProjectDec4-2022 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Testing_GitHub-ManyLines.txt
+        Testing_GitHub.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+jango@Boratemel MINGW64 ~/GitProjectDec4-2022 (master)
+$ git add -A
+
+jango@Boratemel MINGW64 ~/GitProjectDec4-2022 (master)
+$ git commit -m "first commit"
+[master (root-commit) c056492] first commit
+2 files changed, 6 insertions(+)
+create mode 100644 Testing_GitHub-ManyLines.txt
+create mode 100644 Testing_GitHub.txt
+
+WHEN YOU ARE PERFORMING THIS FIRST TIME COPY BELOW repository LINK FROM GitHub.com account.
+jango@Boratemel MINGW64 ~/GitProjectDec4-2022 (master)
+$ git remote add origin git@github.com:Jangonyc/Cengaver-Java-Automation-VA-class.git
+
+jango@Boratemel MINGW64 ~/GitProjectDec4-2022 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+jango@Boratemel MINGW64 ~/GitProjectDec4-2022 (master)
+$ git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 350 bytes | 350.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Jangonyc/Cengaver-Java-Automation-VA-class.git
+* [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+jango@Boratemel MINGW64 ~/GitProjectDec4-2022 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+jango@Boratemel MINGW64 ~/GitProjectDec4-2022 (master)
+$
+$ clear
+CLOSE
+
